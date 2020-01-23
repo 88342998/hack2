@@ -25,8 +25,8 @@ int main (void) {
 	printf("Enter the latitude of the destination in degrees:\n");
 	scanf("%lf", &bLatitude);
 
-	printf("Enter the latitude of the destination in degrees:\n");
-	scanf("%lf", &bLatitude);
+	printf("Enter the longitude of the destination in degrees:\n");
+	scanf("%lf", &bLongitude);
 
 			//latitude range [-90,90] and longitude range [-180,180]
 
@@ -54,14 +54,14 @@ int main (void) {
 
 	double cTrigLongitude;
 
-	cTrigLongitude = cos cDifLongitude ;
+	cTrigLongitude = cos(cDifLongitude) ;
 
 	double aSinLatitude, bSinLatitude, aCosLatitude, bCosLatitude;
 
-	aSinLatitude = sin aRadLatitude ;
-	bSinLatitude = sin bRadLatitude ;
-	aCosLatitude = cos aRadLatitude ;
-	bCosLatitude = cos bRadLatitude ;
+	aSinLatitude = sin(aRadLatitude) ;
+	bSinLatitude = sin(bRadLatitude) ;
+	aCosLatitude = cos(aRadLatitude) ;
+	bCosLatitude = cos(bRadLatitude) ;
 
 	double cSinLatitude, cCosLatitude;
 
@@ -74,7 +74,7 @@ int main (void) {
 
 	double cArcTrig;
 	
-	cArcTrig = acos cTrigLatitude ;
+	cArcTrig = acos(cTrigLatitude) ;
 
 	double cRadius;
 	
