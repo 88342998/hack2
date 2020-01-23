@@ -84,10 +84,11 @@ int main (void) {
 
 	cDistance = cArcTrig * cRadius ;
 
-
-	
-
-
+	printf("Location Distance\n");
+	printf("========================\n");
+	printf("Origin:		( %lf , %lf )\n", aLatitude, aLongitude);
+	printf("Destination:	( %lf , %lf )\n", bLatitude, bLongitude);
+	printf("Air distance is %lf kms\n", cDistance);
 
 	return 0;
 
