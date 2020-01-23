@@ -48,11 +48,42 @@ int main (void) {
 		d = arccos (sin(φ1) sin(φ2) + cos(φ1) cos(φ2) cos(∆))·R
 		φ1 = aRadLatitude , φ2 = bRadLatitude , ∆ = aRadLongitude - bRadLongitude , R = 6371
 */
+	double cDifLongitude;
+
+	cDifLongitude = aRadLongitude - bRadLongitude ;
+
+	double cTrigLongitude;
+
+	cTrigLongitude = cos cDifLongitude ;
+
 	double aSinLatitude, bSinLatitude, aCosLatitude, bCosLatitude;
 
-	aSinLatitude = sin aRadLatitude
+	aSinLatitude = sin aRadLatitude ;
+	bSinLatitude = sin bRadLatitude ;
+	aCosLatitude = cos aRadLatitude ;
+	bCosLatitude = cos bRadLatitude ;
+
+	double cSinLatitude, cCosLatitude;
+
+	cSinLatitude = aSinLatitude * bSinLatitude ;
+	cCosLatitude = aCosLatitude * bCosLatitude * cTrigLongitude ;
+
+	double cTrigLatitude;
+
+	cTrigLatitude = cSinLatitude + cCosLatitude ;
+
+	double cArcTrig;
 	
-	aCosLatitude = cos aRadLatitude
+	cArcTrig = acos cTrigLatitude ;
+
+	double cRadius;
+	
+	cRadius = 6371 ;
+
+	double cDistance;
+
+	cDistance = cArcTrig * cRadius ;
+
 
 	
 
