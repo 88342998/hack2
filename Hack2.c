@@ -30,15 +30,34 @@ int main (void) {
 
 			//latitude range [-90,90] and longitude range [-180,180]
 
+	double aPieLatitude, aPieLongitude, bPieLatitude, bPieLongitude;
+
+	aPieLatitude = aLatitude / 180 ;
+	aPieLongitude = aLongitude / 180 ;
+	bPieLatitude = bLatitude / 180 ;
+	bPieLongitude = bLongitude / 180 ;
+	
 	double aRadLatitude, aRadLongitude, bRadLatitude, bRadLongitude;
 
-	aRadLatitude = aLatitude / 180
-	aRadLongitude = aLongitude / 180
-	bRadLatitude = bLatitude / 180
-	bRadLongitude = bLongitude / 180
+	aRadLatitude = aPieLatitude * M_PI ;
+	aRadLongitude = aPieLongitude * M_PI ;
+	bRadLatitude = bPieLatitude * M_PI ;
+	bRadLongitude = bPieLongitude * M_PI ;
+/*
+		Now we use the spherical law of cosines
+		d = arccos (sin(φ1) sin(φ2) + cos(φ1) cos(φ2) cos(∆))·R
+		φ1 = aRadLatitude , φ2 = bRadLatitude , ∆ = aRadLongitude - bRadLongitude , R = 6371
+*/
+	double aSinLatitude, bSinLatitude, aCosLatitude, bCosLatitude;
+
+	aSinLatitude = sin aRadLatitude
 	
+	aCosLatitude = cos aRadLatitude
 
 	
+
+
+
 	return 0;
 
 }
