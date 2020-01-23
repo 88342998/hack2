@@ -13,9 +13,10 @@
 
 int main (void) {  
 
-	// Variable declarations  
-
-	// Program statements  
+		// Variable declarations  
+	double
+	
+		// Program statements  
 
 	
 	
