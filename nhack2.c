@@ -29,26 +29,50 @@ Origin: (41.948300, -87.655600)
 
 
 
+
 #include <stdio.h>
+#include <math.h>
+
 int main (void) {  
+double lat1, lat2,rad1, rad2;
 
-double lat1, lat2, ϕ1, ϕ2
-lat1=41.948300
-scanf("%lf"& ϕ1)
-lat2= 40.820600
-scanf("%lf"& ϕ2)
+printf("Enter the origin latitude: \n");
+scanf("%lf", & lat1);
+printf("Enter the destination latitude: \n");
+scanf("%lf", & lat2);
 
-ϕ1=lat1/180· π
-ϕ2=lat2/180· π
+//convert radian
+rad1=lat1/180 * M_PI;
+rad2=lat2/180 * M_PI;
 
-double long1,long2,∆=
-long1= -96.705600 
-long2= -87.655600
-∆=(long2-long1)/180· π
+double long1,long2,dif;
 
+printf("Enter the origin longitude: \n");
+scanf("%lf", &long1 );
+printf("Enter the destination longitude: \n");
+scanf("%lf", &long2 );
+dif=(long2-long1)/180 * M_PI;
+
+double Radius;
+Radius= 6371;
+
+
+/* d = arccos (sin(ϕ1) sin(ϕ2) + cos(ϕ1) cos(ϕ2) cos(∆)) · R*/
+/* distance = arccos (sin(rad1) sin(rad2) + cos(rad1) cos(rad2) cos(dif) · Radius */
+/* distance = a + b. */
+
+double distance, a, b,c ;
+a= sin (rad1)*sin (rad2) ;
+c= acos(a);
+b= cos(rad1) * cos(rad2) * cos(dif) * (Radius) ; 
+distance= c+b ;
 
 double Origin,Destination, AirDistance;
-printf("Enter Origin\n");
-printf("Enter Destination\n");
-printf("Enter AirDistance\n");
-scanf("%lf"& x)
+printf("Location Distance\n");
+printf("===========================\n");
+printf("Origin: (%lf,%lf)\n",lat1,long1);
+printf("Destination: (%lf,%lf)\n",lat2,long2);
+printf("Air Distance is %lf kms\n",distance);
+
+return 0; 
+}
